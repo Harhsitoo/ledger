@@ -47,3 +47,7 @@ class InvalidSubscriptionError(LedgerError, ValueError):
 
 class InvalidTransitionError(LedgerError, ValueError):
     """A subscription command is not permitted from its current state."""
+
+
+class InvalidProrationError(LedgerError, ValueError):
+    """A plan change cannot be quoted for the supplied subscription and time."""

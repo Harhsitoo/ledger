@@ -9,6 +9,7 @@ from .money import (
 )
 from .periods import BillingCadence, CycleAnchor, Period, cycle_boundary, period_for_cycle
 from .plans import Plan, PlanPriceSnapshot
+from .proration import PlanChangeTiming, ProrationQuote, ProrationTiming, quote_plan_change, quote_proration
 from .subscriptions import Subscription, SubscriptionState, entitled_at, transition
 from .time import Clock
 
@@ -26,6 +27,11 @@ __all__ = [
     "period_for_cycle",
     "Plan",
     "PlanPriceSnapshot",
+    "PlanChangeTiming",
+    "ProrationQuote",
+    "ProrationTiming",
+    "quote_plan_change",
+    "quote_proration",
     "Subscription",
     "SubscriptionState",
     "entitled_at",
