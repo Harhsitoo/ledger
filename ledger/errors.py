@@ -27,3 +27,11 @@ class EmptyAllocationError(AllocationError):
 
 class InvalidWeightError(AllocationError):
     """An allocation weight is not a positive integer."""
+
+
+class InvalidTimeError(LedgerError, ValueError):
+    """A datetime or billing timezone cannot be used by Ledger."""
+
+
+class InvalidPeriodError(LedgerError, ValueError):
+    """A billing period does not describe a non-empty valid interval."""
