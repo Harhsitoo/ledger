@@ -63,3 +63,15 @@ class InvalidInvoiceError(LedgerError, ValueError):
 
 class InvoiceFinalizedError(InvalidInvoiceError):
     """An operation attempted to alter a finalized invoice."""
+
+
+class InvalidPaymentError(LedgerError, ValueError):
+    """A payment-adapter result is incomplete or internally inconsistent."""
+
+
+class InvalidDunningError(LedgerError, ValueError):
+    """A dunning policy or case cannot be represented by Ledger."""
+
+
+class InvalidDunningTransitionError(InvalidDunningError):
+    """A payment result does not match the one attempt currently scheduled."""
