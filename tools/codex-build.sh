@@ -33,8 +33,9 @@ codex exec \
   -o "$SUMMARY" \
   "$PROMPT
 
-Run the test suite with \`$PYTHON -m pytest -q\` and make sure it passes before
-you finish. Write real tests for anything you add." >/dev/null
+If this task involves Python code, write real tests for it and run the suite
+with \`$PYTHON -m pytest -q\` before you finish — it must pass. If the task is
+design or documentation only, there is nothing to run." >/dev/null
 
 if [[ -z "$(git -C "$REPO" status --porcelain)" ]]; then
   echo "   codex made no changes — nothing to commit" >&2
