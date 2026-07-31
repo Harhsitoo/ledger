@@ -51,3 +51,15 @@ class InvalidTransitionError(LedgerError, ValueError):
 
 class InvalidProrationError(LedgerError, ValueError):
     """A plan change cannot be quoted for the supplied subscription and time."""
+
+
+class InvalidTaxError(LedgerError, ValueError):
+    """Tax inputs cannot be represented by Ledger's tax policy."""
+
+
+class InvalidInvoiceError(LedgerError, ValueError):
+    """An invoice or invoice line is internally inconsistent."""
+
+
+class InvoiceFinalizedError(InvalidInvoiceError):
+    """An operation attempted to alter a finalized invoice."""
