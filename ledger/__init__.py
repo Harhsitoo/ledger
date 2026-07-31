@@ -8,6 +8,8 @@ from .money import (
     allocate_weighted,
 )
 from .periods import BillingCadence, CycleAnchor, Period, cycle_boundary, period_for_cycle
+from .plans import Plan, PlanPriceSnapshot
+from .subscriptions import Subscription, SubscriptionState, entitled_at, transition
 from .time import Clock
 
 __all__ = [
@@ -22,4 +24,10 @@ __all__ = [
     "Period",
     "cycle_boundary",
     "period_for_cycle",
+    "Plan",
+    "PlanPriceSnapshot",
+    "Subscription",
+    "SubscriptionState",
+    "entitled_at",
+    "transition",
 ]

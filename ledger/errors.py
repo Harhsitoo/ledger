@@ -35,3 +35,15 @@ class InvalidTimeError(LedgerError, ValueError):
 
 class InvalidPeriodError(LedgerError, ValueError):
     """A billing period does not describe a non-empty valid interval."""
+
+
+class InvalidPlanError(LedgerError, ValueError):
+    """A plan or its price cannot be represented by Ledger."""
+
+
+class InvalidSubscriptionError(LedgerError, ValueError):
+    """A subscription has inconsistent state or interval data."""
+
+
+class InvalidTransitionError(LedgerError, ValueError):
+    """A subscription command is not permitted from its current state."""
