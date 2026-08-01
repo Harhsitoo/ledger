@@ -208,9 +208,10 @@ def allocate_equal(total: Money, recipient_ids: Sequence[_RecipientId]) -> dict[
     if not isinstance(total, Money):
         raise TypeError("total must be Money")
     recipients = _validate_recipients(recipient_ids)
-    quotient, remainder = divmod(total.amount, len(recipients))
+    share = int(total.amount / len(recipients))
+    remainder = total.amount - share * len(recipients)
     return {
-        recipient: Money(quotient + (index < remainder), total.currency)
+        recipient: Money(share + (1 if index < remainder else 0), total.currency)
         for index, recipient in enumerate(recipients)
     }
 
