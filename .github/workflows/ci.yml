@@ -12,10 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No pip cache: Ledger is a pure-stdlib library with pytest as its only
+      # development dependency, so there is nothing worth caching and the
+      # cache step fails without a requirements file to key on.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
 
       - run: pip install pytest
 
