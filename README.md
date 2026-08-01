@@ -1,5 +1,7 @@
 # Ledger
 
+[![CI](https://github.com/Harhsitoo/ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/Harhsitoo/ledger/actions/workflows/ci.yml)
+
 A subscription billing engine — plans, billing cycles, proration, invoicing, and
 dunning.
 
